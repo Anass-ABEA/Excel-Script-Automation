@@ -141,10 +141,10 @@ def addToSujets(page,data,ligne):
 
 
 # lire la liste des fichiers Excel
-excel_list = glob.glob("XLSX/*.xlsx")
+excel_list = glob.glob("GINF_Stages/*.xlsx")
 
 # creation d'un nouveau fichier excel pour y mettre le résultat
-workbook = xlsxwriter.Workbook("./ContactEntreprises.xlsx")
+workbook = xlsxwriter.Workbook("./GINF_Partenariat_Stages.xlsx")
 
 # page entreprises et étudiants
 page_entreprises = workbook.add_worksheet("entreprises")
@@ -194,4 +194,4 @@ try:
     workbook.close()
 
 except FileCreateError as err:
-    print("Veuillez fermer les fichiers Excels:\n\t• dans le dossier XLSX (si ouvert)\n\t• 'ContactEntreprises.xlsx' (si ouvert)\nPuis relancez l'application")
+    print("Veuillez fermer les fichiers Excels:\n\t• dans le dossier GINF_Stages (si ouvert)\n\t• 'ContactEntreprises.xlsx' (si ouvert)\nPuis relancez l'application")

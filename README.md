@@ -2,8 +2,8 @@
 - Télécharger le code
 - Ouvrez la version que vous souhaitez 
 - Copier le contenu du dossier `dist` dans l'emplacement que vous voulez
-- Vider le contenu du dossier `XLSX`
-- Télécharger les fichiers excels dans le dossier `XLSX`
+- Vider le contenu du dossier `GINF_Stages`
+- Télécharger les fichiers excels dans le dossier `GINF_Stages`
 - Lancer l'application
 
 # Version 1.0
