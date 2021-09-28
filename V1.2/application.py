@@ -5,7 +5,6 @@ from xlsxwriter.exceptions import FileCreateError
 
 listeTypeSujets = "Développement Web, Développement Mobile, Développement Cloud, Services Web, Sites Web, BI, Big Data, Administration Cloud, Virtualisation, Machine Learning, Marketing Digital, Transformation Digitale, Cybersécurité, Blockchain, IoT, Devops, Audit, Urbanisation des SI".split(", ")
 
-
 def cell(sheet, e):
     b = ord(e[0]) - ord("A") + 1
     a = int(e[1:])
@@ -18,7 +17,7 @@ def findElementIndex(string, list):
     return -1
 
 def findIndexSujet(str):
-    return findElementIndex(str,listeTypeSujets)
+    return findElementIndex(str, listeTypeSujets)
 
 
 def getDonneesFichier(filePath):
@@ -135,8 +134,11 @@ def addToSujets(page,data,ligne):
     cell_format = workbook.add_format()
     cell_format.set_align("center")
     cell_format.set_align("vcenter")
-    pos = findIndexSujet(data["nature Sujet"]) + 1
-    page.write(ligne,pos, "X",cell_format)
+    try:
+        pos = findIndexSujet(data["nature Sujet"]) + 1
+        page.write(ligne,pos, "X",cell_format)
+    except Exception:
+        print("EMPTYFIELD")
     page.write(ligne,0, data["entreprise"])
 
 
